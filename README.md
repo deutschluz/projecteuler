@@ -14,4 +14,11 @@ As soon as a problem is chosen, participants have 24 hrs to provide an implement
 solution.
 
 # Recommended Problem Solving Internet Sites
-[GitHub](http://github.com)
+* [HackerRank](http://hackerrank.com)
+* [Project Euler.net](http://projecteuler.net)
+* [list of internet sites dedicated to problem solving](https://towardsdatascience.com/top-20-websites-for-coding-challenge-and-competition-in-2020-f667089a5b47)
+
+## Special Note about Project Euler
+Some problems will require processing data which does not fit in the standard 64 bit machine word length. For those problems, it might be 
+necessary to add a library, usually called BigInt or something, to your coding environment. In short, you have to be able to use 
+ready made libraries in your code. This can be tricky, if not impossible, in Windows.
