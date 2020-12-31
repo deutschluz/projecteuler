@@ -6,7 +6,7 @@ website around the internet.
 # Rules
 
 Participants will agree to a random problem and implement a solution for it 
-in an agreed upon language: java,lua,c++ should be primarily considered for this.
+in an agreed upon language: java and c++ should be primarily considered for this.
 
 A bet of 25 cents is required to enter the competition.
 
