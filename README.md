@@ -1,8 +1,16 @@
-This repo will contain my solution to projecteuler.net problems in
+# Daily Programming Challenge
 
-1. c
-2. c++
-3. bash
-4. sed and awk
-5. python
-6. emacsclip
+This repo will contain daily programming challenge problems from various 
+website around the internet.
+
+# Rules
+
+Participants will agree to a random problem and implement a solution for it 
+in an agreed upon language: java,lua,c++ should be primarily considered for this.
+
+A bet of 25 cents is required to enter the competition.
+
+As soon as a problem is chosen, participants have 24 hrs to provide an implementation of a 
+solution.
+
+...to be continued
