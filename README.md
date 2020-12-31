@@ -13,4 +13,5 @@ A bet of 25 cents is required to enter the competition.
 As soon as a problem is chosen, participants have 24 hrs to provide an implementation of a 
 solution.
 
-...to be continued
+# Recommended Problem Solving Internet Sites
+[GitHub](http://github.com)
