@@ -1,3 +1,4 @@
+dbg=require("debugger")
 --[[Problem 3 Prime Factors
 
 
@@ -26,8 +27,10 @@ function genPrimes(limit)
   end
   -- mark all multiples as false
   for i=2,limit do
-    for j=i,limit do
+    local j=i
+    while i*j<limit do
       l[i*j]=false
+      j=j+1
     end
   end
   return l
@@ -37,15 +40,17 @@ result=genPrimes(100)
 print("is 97 prime?",result[97])
 
 function makeFactorArray(Num)
+ -- dbg()
   local factArr={} --to hold factors
-  local sqrtN=math.sqrt(Num)
+  local sqrtN=math.floor(math.sqrt(Num))
   local listOfPrimes=genPrimes(sqrtN)
   local limit=#listOfPrimes
 --2. for each p in listOfPrimes
   for p=2,limit do
-    --if p is prime and divides limit
-    if listOfPrimes[p] then
-      if limit%p==0 then
+--  dbg()
+  --if p is prime and divides limit
+    if listOfPrimes[p]==true then
+      if Num%p==0 then
        table.insert(factArr,p)
       end
     end
@@ -57,8 +62,29 @@ local r = makeFactorArray(13195)
 printArray(r)
 
 --3. find max element in factorarray
---   currmax=factorarray[0]
---   for i up factorarray.length
---     if currmax < factorarray[i] then
---        currmax=factorarray[i]
---   return currmax
+function findMax(Arr)  
+--[[
+  local currmax=Arr[0]
+  for i=1,#Arr do
+    if currmax < Arr[i] then
+        currmax=Arr[i]
+    end
+    return currmax
+  end
+  --]]
+  --using lua's standard lib
+  return math.max(table.unpack(Arr))
+end
+
+local m=findMax(r)
+
+print("the largest prime factor of 13195 is ",m)
+
+function main()
+  local lim=600851475143
+  local factArr=makeFactorArray(lim)
+  local max=findMax(factArr)
+  print("the answer is ", max)
+end
+
+main()
