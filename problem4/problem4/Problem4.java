@@ -15,7 +15,7 @@ public class Problem4 {
             for(int j = 999; j > 0; j--) {
 		    int product = i * j;
                     int result = product;
-                if (result < palinSol || result = palinSol) {
+                if (result < palinSol || result == palinSol) {
                     break;
                 }
                 String s1 = Integer.toString(result);
