@@ -4,7 +4,7 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 
 
 
-
+![problem 8 image](https://raw.githubusercontent.com/deutschluz/projecteuler/master/problem8/files/problem8_image.PNG)
 
 
 
