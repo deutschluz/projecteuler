@@ -18,7 +18,6 @@
 	
 	**what is the sum of sg(i) from 1 to 150?**
 	
-	---
 	
 # Analysis of the problem
 
@@ -54,5 +53,41 @@
 			```
 			- the loop simply searches through all i < 25 and checks the condition; pretty simple.
 			
-		*
+		* we have enough understanding now to implement a brute force approach and check that
+			the sum of sg(i) from 1 to 20 is 156
 			
+		* first lets implement g(i) as bruteForce(N,i)
+			```python
+			def bruteForceProof(N,i):
+				for n in range(1,N):
+					if sumDigit(SumDigitFac(n))==i:
+						return n
+				else:
+					return False;
+			```
+		* in bruteForce(N,i) N is acting as an arbitrary limit and in fact, the
+			values returned fluctuate randomly
+			
+		* since we have renamed g to bruteForce, we will also rename 's' in 'sg' to
+			sumDigit, so that we want to show using the code below 
+				```python
+					total=0
+					for i in range(1,20):
+						total=total + sumDigit(bruteForceProof(10000,i))
+					return total
+				```
+				that total=156
+				
+		* ```python
+			def sum(lim,N):
+				total=0
+				for i in range(1,N+1):
+					total=total + sumDigit(bruteForceProof(lim,i))
+				return total
+   
+			print(sum(1000,20))
+		
+	
+# Key Insigts 
+	- all of the complexity of this problem lies in the bruteForceProof function
+	
