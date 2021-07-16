@@ -28,7 +28,8 @@
 			- sumDigit(sumDigitFac(342)) = 5
 		* g(i) is an interesting function: in words, 
 			"g of i is to be the smallest positive integer n such that sumDigit(sumDigitFac(n))=i"
-		* the myu operator in recursion function theory is used to denote functions that
+		* g is an example of a minimization function and is related to the myu operator,which in 
+		      -recursion function theory is used to denote functions that
 			- require a minimization; see the wiki on the "mu" operator for more.
 		* the next line says "it can be verified that ..."; in other words, a proof
 			can be found that g(5) is 25.
@@ -56,7 +57,7 @@
 		* we have enough understanding now to implement a brute force approach and check that
 			the sum of sg(i) from 1 to 20 is 156
 			
-		* first lets implement g(i) as bruteForce(N,i)
+		* first lets implement g(i) as bruteForceProof(N,i)
 			```python
 			def bruteForceProof(N,i):
 				for n in range(1,N):
@@ -78,7 +79,8 @@
 				```
 				that total=156
 				
-		* ```python
+		* 
+		```python
 			def sum(lim,N):
 				total=0
 				for i in range(1,N+1):
@@ -86,8 +88,27 @@
 				return total
    
 			print(sum(1000,20))
-		
+		```
 	
-# Key Insigts 
+# Key Insights 
 	- all of the complexity of this problem lies in the bruteForceProof function
-	
+	- of the many flaws apparent in the 'bruteForceProof' function, a glaring one
+		to me is that 'lim' parameter. presumably we want to implement g using
+		one parameter
+	- so the question is what sort of pattern can we use from the 'i'  in g(i)
+	- Observe: sumDigitFac(342)=32 and sumDigitFac(25)=122; remember in this 
+		context i=5; 
+	- '32' and '122' are examples of partitions of 5.
+	- all partitions of 5: 11111,1112,122,113,23,32,41,14,5
+	- now we turn the question on its head: 
+			find the least m such that sumDigitFac(m)==x for x in partitions(5) 
+				we know that for m=342 sumDigitFac(342)==32
+								m=25  sumDigitFac(25)==122
+								m=?  sumDigitFac(?)== 11111
+								m=? sumDigitFac(?)==1112
+			    				m=33444411111;  sumDigitFac(33444411111)==113
+								m=43311111, sumDigitFac(43311111)==41
+	- find g(4)
+		- partitions of 4: 1111,112,211,121,13,31,4
+			   m=133, sumDigitFac(133)=13
+			   m=31, sumDigitFac(31)=

@@ -19,6 +19,7 @@ function SumDigitFac(N)
 		return result;
 	end
 print(SumDigitFac(342));
+
 function DigitSum(N)
 		local result=0;
 		while (N>0) do

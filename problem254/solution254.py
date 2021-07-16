@@ -12,9 +12,7 @@ def SumDigitFac(N):
         N=(N-N%10)/10;
     return int(result);
         
-#print(SumDigitFac(342));
 
-#print(SumDigitFac(25))
 
 def sumDigit(N):
     result=0;
@@ -31,12 +29,6 @@ def bruteForceProof(N,i):
             return n
     else:
         return False;
-    
-print(sumDigit(bruteForceProof(1000,2)))
-print(sumDigit(bruteForceProof(1000,3)))
-print(sumDigit(bruteForceProof(1000,4)))
-print(bruteForceProof(100000,150))
-
 
 def sum(lim,N):
     total=0
@@ -45,3 +37,7 @@ def sum(lim,N):
     return total
    
 print(sum(1000,20))
+
+
+print(bruteForceProof(100,4))
+print(SumDigitFac(133))
