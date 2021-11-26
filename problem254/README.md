@@ -112,3 +112,11 @@
 		- partitions of 4: 1111,112,211,121,13,31,4
 			   m=133, sumDigitFac(133)=13
 			   m=31, sumDigitFac(31)=
+			   
+# Main Insight: switch the search space. 
+	- the g function, or as I call it bruteForce, requires a second parameter to act as a limit and this limit can be on the order of 10^6 or greater for small input < 40.
+	- using the evidence above, it appears possible to DROP this limit and devise an algorithm that examines the partitions of the input:
+	- ``` python
+		def geniusProof(i):
+			for part in Partitions(i):
+				
